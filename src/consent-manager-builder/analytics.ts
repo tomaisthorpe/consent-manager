@@ -36,7 +36,7 @@ export default function conditionallyLoadAnalytics({
   destinations,
   destinationPreferences,
   isConsentRequired,
-  shouldReload = true,
+  shouldReload = false,
   defaultDestinationBehavior,
   categoryPreferences
 }: AnalyticsParams) {
