@@ -195,8 +195,8 @@ export default class ConsentManagerBuilder extends Component<Props, State> {
       fetchDestinations(cdnHost, [writeKey, ...otherWriteKeys])
     ])
 
-    const newDestinations = getNewDestinations(destinations, destinationPreferences || {})
-    const workspaceAddedNewDestinations =
+    let newDestinations = getNewDestinations(destinations, destinationPreferences || {})
+    let workspaceAddedNewDestinations =
       destinationPreferences &&
       Object.keys(destinationPreferences).length > 0 &&
       newDestinations.length > 0
@@ -221,6 +221,12 @@ export default class ConsentManagerBuilder extends Component<Props, State> {
     } else {
       preferences = destinationPreferences || initialPreferences
     }
+
+    newDestinations = getNewDestinations(destinations, destinationPreferences || {})
+    workspaceAddedNewDestinations =
+      destinationPreferences &&
+      Object.keys(destinationPreferences).length > 0 &&
+      newDestinations.length > 0
 
     conditionallyLoadAnalytics({
       writeKey,

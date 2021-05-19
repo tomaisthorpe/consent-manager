@@ -4990,6 +4990,8 @@ var consentManager = (function(e) {
                                 cookieExpires: f
                               })))
                           : (w = m || s),
+                        (y = bo(_, m || {})),
+                        (A = m && Object.keys(m).length > 0 && y.length > 0),
                         co({
                           writeKey: n,
                           destinations: _,
